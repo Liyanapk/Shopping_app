@@ -1,0 +1,23 @@
+.banner {
+    display: block;
+    justify-content: space-around;
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+    max-height: auto;
+    background-image: url("https://optimal-demos.myshopify.com/cdn/shop/files/dm2-bnr1_1600x.jpg?v=1614749470");
+    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+}
+
+.banner-items{
+    display: flex;
+    flex-direction: column;
+    line-height: 14px;
+    align-items: center;
+    padding-top: 15rem;
+    
+}
+

@@ -1,0 +1,11 @@
+.viewcollection{
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    height: 50px;
+    padding: 20px;
+}
+
+.collections{
+    padding: 10px;
+}
