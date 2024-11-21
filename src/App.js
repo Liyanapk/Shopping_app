@@ -4,6 +4,8 @@ import { Header } from './components/header/Header';
 import { Banner } from './components/banner/Banner';
 import { DataProvider } from './components/bestseller/DataProvider';
 import { BestSeller } from './components/bestseller/BestSeller';
+import { TopSelection } from './components/topselselcetion/TopSelection';
+import { Footer } from './components/footer/Footer';
 
 
  
@@ -13,11 +15,12 @@ function App() {
       
       <Header />
       <Banner />
-      <DataProvider>
-    
-    <BestSeller/>
 
+      <DataProvider>
+      <BestSeller/>
+      <TopSelection/>
       </DataProvider>
+      <Footer/>
 
     </div>
   );

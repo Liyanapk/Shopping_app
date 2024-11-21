@@ -15,9 +15,9 @@
 .banner-items{
     display: flex;
     flex-direction: column;
-    line-height: 14px;
+    line-height: 4px;
     align-items: center;
-    padding-top: 15rem;
+    padding-top: 8rem;
     
 }
 

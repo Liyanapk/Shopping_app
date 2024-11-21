@@ -1,43 +1,48 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { DataContext } from "./DataProvider";
 import { Card } from "../card/Card";
-import './BestSeller.css'
-import '../card/Card.css'
+import "./BestSeller.css";
+import { ViewCollection } from "../viewcollections/ViewCollection";
+import { CategorySelector } from "../categoryfilter/CategorySelector";
 
+export const BestSeller = () => {
+  const data = useContext(DataContext);
 
-export const BestSeller = () =>{
+  const { filterData, handleCategoryClick } = CategorySelector(data);
 
-    const data = useContext(DataContext)
-    
-    
+  return (
+    <div className="seller-content">
+      <h1>Best seller</h1>
+      <p>Browse a huge variety of best seller</p>
 
-    return(
+      <div className="catagery">
+        <ul className="catagery-list">
+          <li>
+            <a href="#women" onClick={() => handleCategoryClick("women")}>
+              WOMEN
+            </a>
+          </li>
+          <li>
+            <a href="#men" onClick={() => handleCategoryClick("men")}>
+              MEN
+            </a>
+          </li>
+          <li>
+            <a
+              href="#accessories"
+              onClick={() => handleCategoryClick("accessories")}
+            >
+              ACCESSORIES
+            </a>
+          </li>
+        </ul>
+      </div>
 
-        
+      <Card items={filterData.slice(0, 6)} />
 
-            <div className="seller-content">
-                <h2>Best seller</h2>
-                <p>Browse a huge variety of best seller</p>
-
-                <div className="catagery">
-                    <ul className="catagery-list">
-                    <li><a href="#">WOMEN</a></li>
-                    <li><a href="#">MEN</a></li>
-                    <li><a href="#">ACCESSORIES</a></li>
-
-                    </ul>
-                    
-                </div>
-                <div className="grid-container">
-                {data.slice(0,6).map((item)=>(
-                
-                    <div key={item.id}>
-                <Card item={item}/>
-                    </div>
-           ))}
-                </div>
-            
-            </div>
-        
-    )
-}
+      <div className="view-collection-button">
+        <ViewCollection />
+      </div>
+    </div>
+  );
+};
