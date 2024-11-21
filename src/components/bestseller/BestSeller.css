@@ -1,10 +1,31 @@
 
-.seller{
+  .seller-content {
+    text-align: center;
+    padding-top: 8rem;
+   
+  }
+
+
+  .catagery{
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    justify-content: center;
+    gap:2em;
+    padding-top: 1rem;
+  }
+  .catagery-list{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    list-style: none;
+
+  }
+  .catagery-list a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
     
-    padding: 20px;
-}
-
-
+    
+  }
+  
