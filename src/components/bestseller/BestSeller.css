@@ -16,7 +16,7 @@
   .catagery-list{
     display: flex;
     flex-direction: row;
-    gap: 2em;
+    gap: 2.5em;
     list-style: none;
 
   }
@@ -39,6 +39,7 @@
 
 .catagery-list li{
   position: relative;
+  
 }
 
   .catagery-list a{
@@ -48,8 +49,9 @@
     font-size: 20px;
     
     
+    
   }
   .view-collection-button{
-    padding-top: 10rem;
+    padding-top: 9rem;
   }
   

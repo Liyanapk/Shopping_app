@@ -12,7 +12,7 @@ export const Card = ({ items = [] }) => {
             </div>
             <div className="card-title">
               <h3>{item.title}</h3>
-              <p>${item.price}</p>
+              <p><strong>$</strong>{item.price}</p>
             </div>
           </div>
         ))

@@ -15,7 +15,7 @@ export const TopSelection = () =>{
       return (
         <div className="selection-content">
           <h2>Top Picks On Fashion</h2>
-          <Card items={data.slice(0, 3)} />
+          <Card items={data.slice(0, 4)} />
           
         </div>
       );

@@ -9,6 +9,11 @@ import { SiAmericanexpress } from "react-icons/si";
 import { FaPaypal } from "react-icons/fa";
 import { PiSelectionForegroundLight } from "react-icons/pi";
 import { SiDiscover } from "react-icons/si";
+import { FaFacebook } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 export const Footer = () =>{
 
@@ -63,7 +68,15 @@ export const Footer = () =>{
                         <div>
 
                         </div>
+                        <div className="social-media">
+                    <FaFacebook />
+                    <FaTwitter />
+                    <FaInstagram />
+                    <FaLinkedin />
+                    <IoLogoWhatsapp />
+                    </div>
                     </ul>
+                    
                     
                 </div>
              </div>

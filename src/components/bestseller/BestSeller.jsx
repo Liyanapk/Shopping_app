@@ -38,7 +38,7 @@ export const BestSeller = () => {
         </ul>
       </div>
 
-      <Card items={filterData.slice(0, 6)} />
+      <Card items={filterData.slice(0, 4)} />
 
       <div className="view-collection-button">
         <ViewCollection />

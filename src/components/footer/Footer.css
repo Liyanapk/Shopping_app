@@ -31,11 +31,13 @@
     gap: 0.5em;
     width: 400px;
     margin-top: 4rem;
+    line-height: 25px;
 
 }
 .list {
    
     list-style: none;
+    line-height: 25px;
    
 
 }
@@ -48,15 +50,23 @@
 }
 .footer-contact{
     margin-top: 3rem;
+    
 }
 
-.list-contact{
-    list-style: none;
-    flex-direction: row;
+.list-contact {
+    list-style: none; 
+    display: flex; 
+    align-items: center; 
+    gap: 0.5em; 
+    line-height: 1.5;
+}
+.social-media{
     display: flex;
+    flex-direction: row;
     gap: 1em;
-
+    margin-top: 1rem;
 }
+
 
 .footer-section-2{
     display:flex;
@@ -75,6 +85,7 @@
 .footer-email{
     display: flex;
     flex-direction: row;
+    
 }
 .footer-input{
     width: 280px;
@@ -99,6 +110,7 @@
 }
 .footer-signup p{
 width:400px;
+line-height: 25px;
 }
 .footer-signup{
     padding-left: 3.5rem;
