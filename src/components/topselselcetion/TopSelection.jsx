@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import { Card } from "../card/Card";
-import { DataContext } from "../bestseller/DataProvider";
+import { DataContext } from "../../layout/DataProvider";
 import '../card/Card.css'
 import "./TopSelection.css"
-import { RiArrowLeftWideFill } from "react-icons/ri";
-import { RiArrowRightWideLine } from "react-icons/ri";
 
 
 export const TopSelection = () =>{

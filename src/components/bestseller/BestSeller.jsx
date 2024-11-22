@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { DataContext } from "./DataProvider";
+import {DataContext} from "../../layout/DataProvider" 
 import { Card } from "../card/Card";
 import "./BestSeller.css";
 import { ViewCollection } from "../viewcollections/ViewCollection";
-import { CategorySelector } from "../categoryfilter/CategorySelector";
+import { CategorySelector } from "../ctagoryslector/CategorySelector";
 
 export const BestSeller = () => {
   const data = useContext(DataContext);
