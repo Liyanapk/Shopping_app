@@ -81,11 +81,12 @@
     height: 30px;
 }
 .footer-button{
-    width:150px;
-    height: 35px;
-    background-color: rgb(243, 184, 145);
+    width:100px;
+    height: 36px;
+    background-color: rgb(248, 183, 139);
     color: white;
     font-weight: bold;
+    border: none;
 }
 .footer-pays{
     display: flex;
