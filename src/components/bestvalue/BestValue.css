@@ -1,12 +1,51 @@
-.best-value{
+.best-value {
     margin-top: 15rem;
+    background-color: rgba(240,248, 255, 0.5);
+    height: 700px;
 }
 
-
-.best-value-head{
+.best-value-head {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.jwellery {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
+    padding-top: 6rem;
+}
+
+.jwellery-img {
+    width: 200px;
+    height: 250px;
+    border-radius: 100px; /* Makes the image rounded */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+}
+.jwellery-box{
     
+  width: 300px;
+  height: 300px;
+  background-color: #f8f9fa;
+  border-radius: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jwellery-box:hover{
+    transform: translateY(-10px);
+}
+
+/* Hover effect */
+.jwellery-box:hover .jwellery-img:hover {
+    transform: scale(1.1); /* Slightly enlarges the image */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background-color: #f0f0f0; */
 }

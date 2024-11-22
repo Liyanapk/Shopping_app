@@ -10,3 +10,7 @@
 .collections{
     padding: 2rem;
 }
+
+.collection-image{
+    border-radius:1.5em ;
+}
