@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css"
+import { LoginModal } from "../login/Login";
 import { CiSearch } from "react-icons/ci";
 import { BsPerson } from "react-icons/bs";
 import { BsCart3 } from "react-icons/bs";
@@ -8,6 +9,8 @@ import { PiChartBarHorizontalLight } from "react-icons/pi";
 
 export const Header = () => {
 
+
+  const [ isLogin,setLogin ] = useState(false)
 
     return (
       <header>
@@ -33,15 +36,6 @@ export const Header = () => {
               <li className="list">
                 <a href="#">PRODUCT</a>
               </li>
-              <li className="list">
-                <a href="#">PAGES</a>
-              </li>
-              <li className="list">
-                <a href="#">BLOG</a>
-              </li>
-              <li className="list">
-                <a href="#">BUY NOW</a>
-              </li>
             </ul>
           </nav>
 
@@ -60,7 +54,17 @@ export const Header = () => {
             <PiChartBarHorizontalLight  className="icon" />
             </div>
         </div>
+
+
+          
+          <div className="auth-buttons">
+          <button className="login-btn" onClick={() => setLogin(true)}>
+            Login
+          </button>
+          <button className="signup-btn">Sign Up</button>
+        </div>
     </div>
+    { isLogin &&  <LoginModal  onClose={()=> setLogin(false)} />}
 </header>
     );
 

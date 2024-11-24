@@ -21,8 +21,8 @@
 }
 
 .jwellery-img {
-    width: 200px;
-    height: 250px;
+    width: 150px;
+    height: 200px;
     border-radius: 100px; /* Makes the image rounded */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
 }

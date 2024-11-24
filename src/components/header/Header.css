@@ -11,7 +11,7 @@ header{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 14em;
+    gap: 10em;
    
     
     
@@ -76,4 +76,40 @@ header{
     
 }
 
+.auth-buttons{
+    display: flex;
+    flex-direction: row;
+    gap:2em;
 
+}
+
+
+.login-btn{
+    width: 70px;
+    height: 30px;
+    color: white;
+    background-color: rgb(15, 15, 15);
+    border:none;
+    border-radius: 0.3em;
+}
+
+.signup-btn{
+    width: 70px;
+    height: 30px;
+    color:black;
+    background-color: rgb(243, 240, 240);
+    border:none;
+    border-radius: 0.3em;
+}
+
+.login-btn:hover{
+    color:black;
+    background-color: rgb(243, 240, 240);
+
+}
+
+.signup-btn:hover{
+    color: white;
+    background-color: black;
+
+}
