@@ -9,7 +9,7 @@ export const LoginModal = ({ onClose })=>{
     return(
 
         <div className="modal">
-      <div className="modal-content">
+      <div className="modal-content-login">
         <h2>Login</h2>
         <form className="login-item">
           <input type="text" placeholder="E-mail" />

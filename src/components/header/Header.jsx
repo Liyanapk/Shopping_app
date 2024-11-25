@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css"
 import { LoginModal } from "../login/Login";
+import { SighnUpModal } from "../sighnup/SighnUp";
 import { CiSearch } from "react-icons/ci";
 import { BsPerson } from "react-icons/bs";
 import { BsCart3 } from "react-icons/bs";
@@ -11,6 +12,7 @@ export const Header = () => {
 
 
   const [ isLogin,setLogin ] = useState(false)
+  const [ isSighnUp,setSihnup ] = useState(false)
 
     return (
       <header>
@@ -61,10 +63,11 @@ export const Header = () => {
           <button className="login-btn" onClick={() => setLogin(true)}>
             Login
           </button>
-          <button className="signup-btn">Sign Up</button>
+          <button className="signup-btn" onClick={()=>setSihnup(true)}>Sign Up</button>
         </div>
     </div>
     { isLogin &&  <LoginModal  onClose={()=> setLogin(false)} />}
+      {isSighnUp && <SighnUpModal onClose={()=>setSihnup(false)}/>}
 </header>
     );
 

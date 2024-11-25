@@ -18,7 +18,7 @@ export const BestSeller = () => {
       <div className="catagery">
         <ul className="catagery-list">
           <li>
-            <a href="#women" onClick={() => handleCategoryClick("women")}>
+            <a href="#women" onClick={() => handleCategoryClick("women")} >
               WOMEN
             </a>
           </li>
@@ -30,15 +30,17 @@ export const BestSeller = () => {
           <li>
             <a
               href="#accessories"
-              onClick={() => handleCategoryClick("accessories")}
+              onClick={() => handleCategoryClick("kids")}
             >
-              ACCESSORIES
+              KIDS
             </a>
           </li>
         </ul>
       </div>
 
-      <Card items={filterData.slice(0, 4)} />
+      {/* <Card items={filterData().slice(0, 4)} /> */}
+
+        <Card items={filterData.slice(0, 4)} />
 
       <div className="view-collection-button">
         <ViewCollection />

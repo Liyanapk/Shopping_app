@@ -11,7 +11,7 @@ export const Card = ({ items = [] }) => {
               <img src={item.image} alt={item.title} />
             </div>
             <div className="card-title">
-              <h3>{item.title}</h3>
+              <h3>{item.name}</h3>
               <p><strong>$</strong>{item.price}</p>
             </div>
           </div>
