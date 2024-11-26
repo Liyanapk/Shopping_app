@@ -7,7 +7,7 @@ export const BestValue = () =>{
     const data = useContext(DataContext);
     
 
-    const jwelery= data.filter(item=> item.category === "jewelery")
+    const jwelery= data
     
 
 

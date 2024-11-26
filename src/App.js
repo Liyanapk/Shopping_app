@@ -18,7 +18,7 @@ function App() {
       <Banner />
 
       <DataProvider>
-      <BestSeller/>
+      {/* <BestSeller/> */}
       <TopSelection/>
       <BestValue/>
       </DataProvider>
