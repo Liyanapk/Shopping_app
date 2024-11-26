@@ -40,7 +40,7 @@ export const BestSeller = () => {
         </ul>
       </div>
 
-      {/* <Card items={filterData().slice(0, 4)} /> */}
+      <Card />
 
         {/* <Card items={filterData.slice(0, 4)} /> */}
 
