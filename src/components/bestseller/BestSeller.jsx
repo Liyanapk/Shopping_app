@@ -9,7 +9,9 @@ export const BestSeller = () => {
   const data = useContext(DataContext);
 
   const { filterData, handleCategoryClick } = CategorySelector(data);
+  
 
+  
   return (
     <div className="seller-content">
       <h1>Best seller</h1>
