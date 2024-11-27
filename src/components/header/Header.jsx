@@ -6,11 +6,13 @@ import { CiSearch } from "react-icons/ci";
 import { BsPerson } from "react-icons/bs";
 import { BsCart3 } from "react-icons/bs";
 import { PiChartBarHorizontalLight } from "react-icons/pi";
+import { useNavigate } from 'react-router-dom';
+
 
 
 export const Header = () => {
 
-
+const navigate = useNavigate()
   const [ isLogin,setLogin ] = useState(false)
   const [ isSighnUp,setSihnup ] = useState(false)
 
@@ -35,8 +37,8 @@ export const Header = () => {
               <li className="list">
                 <a href="#">SHOPE</a>
               </li>
-              <li className="list">
-                <a href="#">PRODUCT</a>
+              <li className="list" onClick={()=> navigate('/product')}>
+                PRODUCT
               </li>
             </ul>
           </nav>
@@ -49,7 +51,7 @@ export const Header = () => {
             <div>
             <BsPerson  className="icon" />
             </div>
-            <div>
+            <div onClick={()=> navigate('/cart')}>
             <BsCart3 className="icon"/>
             </div>
             <div>
