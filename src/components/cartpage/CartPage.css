@@ -2,79 +2,84 @@
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  .table {
+}
+
+.cart h1 {
+    text-align: start;
+    font-size: 28px;
+    margin-top: 4rem;
+    color: rgb(48, 51, 51);
+
+}
+
+.table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-  }
-  
-  .table-head {
+}
+
+.table-head {
     background-color: #f4f4f4;
     text-align: left;
-  }
-  
-  th, td {
+}
+
+th,
+td {
     padding: 12px 15px;
     text-align: center;
     border: none;
-  }
-  
-  button {
+}
+
+button {
     padding: 6px 12px;
     background-color: darkred;
     color: white;
     border: none;
     cursor: pointer;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: rgb(170, 64, 64);
     color: black;
-  }
-  
-  .no-items {
+}
+
+.no-items {
     text-align: center;
     font-size: 1.2em;
     color: #666;
-  }
-  .cart-product-image {
+}
+
+.cart-product-image {
     width: 100px;
     height: 100px;
     object-fit: cover;
 
-    
-  }
 
-  .image-title{
+}
+
+.image-title {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-  }
 
-  .quantity-button button{
+}
+
+.quantity-button button {
 
     background-color: black;
     color: aliceblue;
     width: 20px;
     height: 20px;
     padding: 2px 2px 2px 2px;
-  }
-  .grand-total{
-   
-        
-        text-align: right;
-        font-size: 1em;
-        font-weight: bold;
-        color: #2b2929;
- 
-    
-  }
+}
+
+.grand-total {
+
+
+    text-align: right;
+    font-size: 1em;
+    font-weight: bold;
+    color: #2b2929;
+
+
+}

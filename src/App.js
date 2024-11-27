@@ -1,5 +1,5 @@
 import "./App.css";
-import { Header } from "./components/header/Header";
+import Header  from "./components/header/Header";
 import { Banner } from "./components/banner/Banner";
 import { BestSeller } from "./components/bestseller/BestSeller";
 import { TopSelection } from "./components/topselselcetion/TopSelection";

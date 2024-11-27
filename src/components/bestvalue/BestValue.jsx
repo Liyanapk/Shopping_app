@@ -5,10 +5,10 @@ import { DataContext } from "../../layout/DataProvider";
 export const BestValue = () => {
     const data = useContext(DataContext);
 
-    // Define your backend base URL
+    
     const backendUrl = "http://localhost:5000/";
 
-    
+
 
     return (
         <div className="best-value">
@@ -19,12 +19,12 @@ export const BestValue = () => {
             </div>
             <div className="jwellery">
                 {data && data.length > 0 ? (
-                    data.map((item, index) => {  
+                    data.map((item, index) => {
                         const imageUrl = item.image ? `${backendUrl}/${item.image}` : "https://via.placeholder.com/150";
                         return (
                             <div key={item.id || index} className="jwellery-box">
                                 <img
-                                    src={imageUrl} 
+                                    src={imageUrl}
                                     alt={item.name || "No Name Available"}
                                     className="jwellery-img"
                                     onError={(e) => {
@@ -32,8 +32,8 @@ export const BestValue = () => {
                                         e.target.src = "https://via.placeholder.com/150"; // Fallback placeholder image
                                     }}
                                 />
-                             
-                              
+
+
                             </div>
                         );
                     })
