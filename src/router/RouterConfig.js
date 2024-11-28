@@ -4,8 +4,9 @@ import {ProductPage} from "../components/productpage/ProductPage";
 import App from "../App"
 import { DataProvider } from "../layout/DataProvider";
 import { CartPage } from "../components/cartpage/CartPage";
-import {successPayment} from "../components/payment/successPayment"
-import { cancelPayment } from "../components/payment/cancelPayment"
+import { SuccessPayment } from "../components/successpayment/SuccessPayment";
+import { CancelPayment } from "../components/cancelpayment/CancelPayment";
+import { PersonDetailes } from "../components/persondetailes/PersonDetailes";
 
 const RouterConfig = () => {
     return (
@@ -16,8 +17,10 @@ const RouterConfig = () => {
                     <Route path="/" element={<App />} />
                     <Route path="/product" element={<ProductPage />} />
                     <Route path="/cart" element={<CartPage/>}/>
-                    <Route path="/success" element={<successPayment/>} />
-                    <Route path="/cancel" element={<cancelPayment />}/>
+                    <Route path="/success" element={<SuccessPayment />} />
+                    <Route path="/cancel" element={<CancelPayment/>} />
+                    <Route path="/person" element={<PersonDetailes/>}/>
+                    
             </Routes>
                 </DataProvider>
         </BrowserRouter>

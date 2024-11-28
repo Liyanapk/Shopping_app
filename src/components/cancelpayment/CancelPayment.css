@@ -1,0 +1,51 @@
+
+.cancel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+  }
+  
+  .cancel-container {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  .cancel-icon {
+    font-size: 4rem;
+    color: #f44336; 
+    margin-bottom: 1rem;
+  }
+  
+  .cancel-message {
+    font-size: 1.8rem;
+    color: #f44336;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cancel-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cancel-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #e53935;
+  }
+  

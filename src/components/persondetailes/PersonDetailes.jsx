@@ -1,13 +1,14 @@
 import React from "react";
 
 
-export const cancelPayment =()=>{
+export const PersonDetailes = ()=>{
 
 
     return(
 
         <div>
-            <h1>cancel</h1>
+
+            <h1>person</h1>
         </div>
     )
 }

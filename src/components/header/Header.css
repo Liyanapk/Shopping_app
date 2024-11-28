@@ -11,7 +11,7 @@ header{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 10em;
+    gap: 8em;
    
     
     
@@ -112,4 +112,10 @@ header{
     color: white;
     background-color: black;
 
+}
+
+.user-icon{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
 }
