@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import './CartPage.css';
 import { jwtDecode } from 'jwt-decode';
 import Header from '../header/Header'
+import {loadStripe} from '@stripe/stripe-js';
 
 export const CartPage = () => {
 
@@ -133,6 +134,33 @@ export const CartPage = () => {
         0
     )
 
+
+
+
+    const makePayment = async()=>{
+        const stripe = await loadStripe('pk_test_51QPzKEKlPIuU4563R5sdWzstAA3zxDgdaLdHPoEQAq7LsMFiFOqMulVPXI6yBWTwJyHyx4jp8JrUEE6oq8pJPcaR00yZOfVELU')
+
+        const body ={
+            product:cartItem
+        }
+        const headers ={
+            'Content-type' : 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('access_token')}` 
+        }
+        const response = await fetch (`http://localhost:5000/api/v1/cart/create-checkout-session`,{
+
+            method:'POST',
+            headers:headers,
+            body:JSON.stringify(body)
+        })
+        
+        const session = await response.json()
+        const result = stripe.redirectToCheckout({
+            sessionId:session.id
+        })
+
+    }
+
     return (
 
 
@@ -174,7 +202,7 @@ export const CartPage = () => {
                                     </td>
                                     <td>{item.product.price * item.quantity}</td>
                                     <td>
-                                        <button onClick={() => deleteCartItem(item._id)}>Delete</button>
+                                        <button className="delete-button " onClick={() => deleteCartItem(item._id)}>Delete</button>
                                     </td>
                                 </tr>
                             ))
@@ -188,6 +216,7 @@ export const CartPage = () => {
 
                 <div className="grand-total">
                     <h3>GRAND TOTAL : ${grandTotal.toFixed(2)} </h3>
+                    <button onClick={makePayment} className="pay-now-button">PAY NOW</button>
                 </div>
 
             </div>
