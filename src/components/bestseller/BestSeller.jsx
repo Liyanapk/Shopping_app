@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import {DataContext} from "../../layout/DataProvider" 
+import { DataContext } from "../../layout/DataProvider"
 import { Card } from "../card/Card";
 import "./BestSeller.css";
 import { ViewCollection } from "../viewcollections/ViewCollection";
@@ -9,6 +9,8 @@ export const BestSeller = () => {
   const data = useContext(DataContext);
 
   const { filterData, handleCategoryClick } = CategorySelector(data);
+
+
 
   return (
     <div className="seller-content">
@@ -38,9 +40,9 @@ export const BestSeller = () => {
         </ul>
       </div>
 
-      {/* <Card items={filterData().slice(0, 4)} /> */}
+      <Card />
 
-        {/* <Card items={filterData.slice(0, 4)} /> */}
+      {/* <Card items={filterData.slice(0, 4)} /> */}
 
       <div className="view-collection-button">
         <ViewCollection />

@@ -21,8 +21,9 @@ export const DataProvider = ({children}) =>{
                 });
                 
                 const result = await response.json();
-
-                setData(result)
+                console.log(result.data);
+                
+                setData(result.data)
             } catch (error) {
                 console.error("Error:", error);
             }

@@ -1,33 +1,33 @@
 
-// import {useState} from "react";
+import {useState} from "react";
 
 
-// export const CategorySelector=(data)=>{
+export const CategorySelector=(data)=>{
 
-//     const [category, setCategory] = useState('women'); 
+    const [category, setCategory] = useState('women'); 
 
 
     
-//     const filterData = () => {
-//         return data.filter(item => {
-//           if (category === 'women') {
-//             return item.catagory === "women";  
-//           } else if (category === 'men') {
-//             return item.catagory === "men";    
-//           } else if (category === 'kids') {
-//             return item.catagory === "kids";      
-//           } 
-//           return item;  
-//         });
-//       };
+    const filterData = () => {
+        return data.filter(item => {
+          if (category === 'women') {
+            return item.catagory === "women";  
+          } else if (category === 'men') {
+            return item.catagory === "men";    
+          } else if (category === 'kids') {
+            return item.catagory === "kids";      
+          } 
+          return item;  
+        });
+      };
 
 
-//       const handleCategoryClick = (newCategory) => {
-//         setCategory(newCategory);  
-//     };
+      const handleCategoryClick = (newCategory) => {
+        setCategory(newCategory);  
+    };
 
-//       return {filterData,category,handleCategoryClick }
-// }
+      return {filterData,category,handleCategoryClick }
+}
 
 
 
