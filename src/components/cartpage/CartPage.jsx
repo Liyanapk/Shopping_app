@@ -23,9 +23,9 @@ export const CartPage = () => {
         try {
             const token = localStorage.getItem("access_token");
             const decodedToken = jwtDecode(token);
-            const userId = decodedToken.userId;
+            const userId = decodedToken.id;
 
-            const response = await fetch(`http://localhost:5000/api/v1/cart/${userId}`, {
+            const response = await fetch(`http://localhost:5000/api/v1/cart/`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`
