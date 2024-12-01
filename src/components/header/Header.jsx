@@ -17,7 +17,22 @@ const Header = () => {
   // const [user, setUser] = useState('')
   // const [error,setError] = useState('')
 
+  const[isHover, setHover] = useState(false)
 
+
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".person-icon-container")) {
+        setHover(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
 
 
@@ -81,14 +96,11 @@ const Header = () => {
 
         <nav className="navitems">
           <ul className="navlist">
-            <li className="list">
-              <a href="#">HOME</a>
-            </li>
-            <li className="list">
-              <a href="#">SHOPE</a>
+            <li className="list" onClick={()=>navigate('/home')}>
+              <a href="home">HOME</a>
             </li>
             <li className="list" onClick={() => navigate('/product')}>
-              PRODUCT
+             <a href="product"> PRODUCT</a>
             </li>
           </ul>
         </nav>
@@ -104,8 +116,21 @@ const Header = () => {
                 style={{ width: "40px", height: "40px", borderRadius: "50%" }}
               />
             ) : ( */}
-              <BsPerson className="icon" onClick={()=> navigate('/person')}/>
-            {/* )} */}
+          <div 
+          className="person-icon-container"
+          onMouseEnter={() => setHover(true)}
+        >
+          <BsPerson className="icon" />
+          {isHover && (
+            <div className="dropdown-menu">
+              <ul>
+                <li onClick={() => navigate('/person')}>Profile</li>
+                <li onClick={() => navigate('/order')}>Order</li>
+              </ul>
+            </div>
+          )}
+        </div>
+
           </div>
           <div onClick={() => navigate('/cart')}>
             <BsCart3 className="icon" />

@@ -7,6 +7,9 @@ import { CartPage } from "../components/cartpage/CartPage";
 import { SuccessPayment } from "../components/successpayment/SuccessPayment";
 import { CancelPayment } from "../components/cancelpayment/CancelPayment";
 import { PersonDetailes } from "../components/persondetailes/PersonDetailes";
+import { PersonOrder } from "../components/personorder/PersonOrder";
+
+
 
 const RouterConfig = () => {
     return (
@@ -20,6 +23,8 @@ const RouterConfig = () => {
                     <Route path="/success" element={<SuccessPayment />} />
                     <Route path="/cancel" element={<CancelPayment/>} />
                     <Route path="/person" element={<PersonDetailes/>}/>
+                    <Route path='/home' element={<App/>}/>
+                    <Route path='/order' element={<PersonOrder/>}/>
                     
             </Routes>
                 </DataProvider>

@@ -2,10 +2,15 @@ import React, { useContext, useState } from "react";
 import "./Card.css";
 import { DataContext } from "../../layout/DataProvider";
 import { BsCartCheckFill } from "react-icons/bs";
+import { CategorySelector } from "../ctagoryslector/CategorySelector";
+
 
 export const Card = () => {
   // Directly access data from context, no need for destructuring
   const data = useContext(DataContext);
+ 
+
+  const { filterData, handleCategoryClick } = CategorySelector(data);
 
 
   const [error, setError] = useState("");
@@ -37,6 +42,37 @@ export const Card = () => {
   };
 
   return (
+
+    <div>
+
+    
+<div className="catagery">
+        <ul className="catagery-list">
+          <li>
+            <a href="#women" onClick={() => handleCategoryClick("women")} >
+              WOMEN
+            </a>
+          </li>
+          <li>
+            <a href="#men" onClick={() => handleCategoryClick("men")}>
+              MEN
+            </a>
+          </li>
+          <li>
+            <a
+              href="#accessories"
+              onClick={() => handleCategoryClick("kids")}
+            >
+              KIDS
+            </a>
+          </li>
+        </ul>
+      </div>
+     
+
+
+
+
     <div className="grid-container">
       {data && data.length > 0 ? (
         data.map((item) => (
@@ -67,6 +103,8 @@ export const Card = () => {
       ) : (
         <p>No items to display</p>
       )}
+    </div>
+
     </div>
   );
 };
