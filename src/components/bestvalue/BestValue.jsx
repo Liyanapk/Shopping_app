@@ -13,7 +13,7 @@ export const BestValue = () => {
     return (
         <div className="best-value">
             <div className="best-value-head">
-                <h2>Discover the Best Value Deals</h2>
+                <h1>Discover the Best Value Deals</h1>
                 <p>Your One-stop Online Shopping Site For Clothes,
                     Accessories, Footwear & More</p>
             </div>

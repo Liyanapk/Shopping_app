@@ -3,6 +3,7 @@ import './CartPage.css';
 import { jwtDecode } from 'jwt-decode';
 import Header from '../header/Header'
 import {loadStripe} from '@stripe/stripe-js';
+import { MdDelete } from "react-icons/md";
 
 export const CartPage = () => {
 
@@ -159,6 +160,61 @@ export const CartPage = () => {
             sessionId:session.id
         })
 
+
+
+
+        if (result.error) {
+            setError(result.error.message);
+        } else {
+            // Handle order placement after successful payment
+            const token = localStorage.getItem('access_token');
+            const decodedToken = jwtDecode(token);
+            const userId = decodedToken.id;
+
+            const paymentData = {
+                user: userId,
+                payment: {
+                    status: 'paid',
+                    paymentId: session.id,
+                    amount: grandTotal,
+                    createdAt: new Date(),
+                },
+                items: cartItem.map(item => ({
+                    product: item.product._id,
+                    quantity: item.quantity
+                }))
+            };
+
+            const orderResponse = await fetch('http://localhost:5000/api/v1/order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(paymentData)
+            });
+
+            if (!orderResponse.ok) {
+                setError('Failed to create order.');
+            } else {
+                        const clearCartResponse = await fetch(`http://localhost:5000/api/v1/cart/clear`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Authorization': `Bearer ${token}`
+                            }
+                        });
+
+
+                if (clearCartResponse.ok) {
+                            
+                    setCartItem([]);
+                    } else {
+                          setError('Failed to clear cart after payment.');
+                    }
+               
+            }
+        }
+
     }
 
     return (
@@ -195,7 +251,7 @@ export const CartPage = () => {
                                         />
                                         {item.product.name}
                                     </td>
-                                    <td>{item.product.price}</td>
+                                    <td>${item.product.price}</td>
                                     <td className="quantity-button">
                                         <button onClick={() => handleDecrease(item._id, item.quantity)}>-</button>
                                         {item.quantity}
@@ -203,7 +259,8 @@ export const CartPage = () => {
                                     </td>
                                     <td>{item.product.price * item.quantity}</td>
                                     <td>
-                                        <button className="delete-button " onClick={() => deleteCartItem(item._id)}>Delete</button>
+                                    <MdDelete onClick={() => deleteCartItem(item._id)} className="cart-delete-icon" />
+                                        
                                     </td>
                                 </tr>
                             ))
