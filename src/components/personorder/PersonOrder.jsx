@@ -42,7 +42,7 @@ export const PersonOrder = () => {
                 }
 
             } catch (err) {
-                setError(err.message);
+                
             }
         };
 

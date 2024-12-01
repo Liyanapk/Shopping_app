@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./PersonDetailes.css";
 import {jwtDecode} from 'jwt-decode';  
 import Header from '../header/Header'
+import { IoIosLogOut } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 export const PersonDetailes = () => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState(null);
+    const navigate = useNavigate()
 
     useEffect(() => {
         const token = localStorage.getItem("access_token");
@@ -51,8 +54,17 @@ export const PersonDetailes = () => {
 
     }, []); 
 
+
+
+    const handleLogout = () =>{
+
+        localStorage.removeItem("access_token");
+        navigate('/home')
+
+    }
+
     if (error) {
-        return <p>{error}</p>;
+        
     }
 
     return (
@@ -75,6 +87,13 @@ export const PersonDetailes = () => {
             <p><strong>Email:</strong> {user?.data.email}</p>
             <p><strong>Phone:</strong> {user?.data.phone}</p>
             <p><strong>Address:</strong> {user?.data.address}</p>
+            <div className="logout-content">
+            <p onClick={handleLogout} className="logout">
+                Logout <IoIosLogOut className="logout-icon" />
+                </p>
+            </div>
+           
+           
             </div>
         </div>
 
