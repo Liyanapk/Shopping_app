@@ -1,82 +1,132 @@
+/* SignUp.css */
+
+/* Modal Background */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background: #dbdada;
-    border-radius: 10px;
-    width: 400px;
-    max-width: 90%;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-     
-  }
-
-  .sighnup-item{
-
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-
-  }
-  .sighnup-item input{
-    width: 250px;
-    height: 30px;
-    outline: none;
-    border-radius: 5px;
-    border:#dbdada;
-  }
-  
-
-  .sighnup-buttons{
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
-    align-items: center;
-    justify-content: center;
-    padding-top: 4rem;
-  }
-  
-
-.sighnup-button{
-
-    width: 80px;
-    height: 30px;
-    color: #dbdada;
-    background-color: rgb(29, 28, 28);
-    border-radius: 4px;
-    cursor: pointer;
-    border: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
-  .close-btn {
-    width: 80px;
-    height: 30px;
-    background: #f44336;
-    color: #fff;
-    border: none;
-   
-    border-radius: 4px;
-    cursor: pointer;
-    
-  }
-  
-  .close-btn:hover {
-    background: #d32f2f;
-  }
-  
+/* Modal Content */
+.modal-content {
+  background: #dbdada;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .error-message{
-    color: red;
-  }
+/* Header */
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Profile Image Container */
+.profile-image-container {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #ccc;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.add-image-text {
+  color: #aaa;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Profile Image */
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Form Inputs */
+.signup-item input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.signup-item input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Buttons */
+.signup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  width: 100%;
+}
+
+.signup-button,
+.close-btn {
+
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signup-button {
+  background-color: #4a90e2;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.signup-button:hover {
+  background-color: #357ab7;
+}
+
+.close-btn {
+  background-color: #ccc;
+  color: white;
+  background-color: red;
+  transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+  background-color: #888;
+}
+
+
+
+.close-btn:hover {
+  background-color: #c0392b;
+}
