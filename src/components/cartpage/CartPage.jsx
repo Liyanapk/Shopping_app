@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import './CartPage.css';
 import { jwtDecode } from 'jwt-decode';
 import Header from '../header/Header'
-import {loadStripe} from '@stripe/stripe-js';
-import { MdDelete } from "react-icons/md";
 
 export const CartPage = () => {
 
@@ -24,9 +22,9 @@ export const CartPage = () => {
         try {
             const token = localStorage.getItem("access_token");
             const decodedToken = jwtDecode(token);
-            const userId = decodedToken.id;
+            const userId = decodedToken.userId;
 
-            const response = await fetch(`http://localhost:5000/api/v1/cart/`, {
+            const response = await fetch(`http://localhost:5000/api/v1/cart/${userId}`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -135,90 +133,7 @@ export const CartPage = () => {
         0
     )
 
-
-
-
-    const makePayment = async()=>{
-        const stripe = await loadStripe('pk_test_51QPzKEKlPIuU4563R5sdWzstAA3zxDgdaLdHPoEQAq7LsMFiFOqMulVPXI6yBWTwJyHyx4jp8JrUEE6oq8pJPcaR00yZOfVELU')
-
-        const body ={
-            product:cartItem
-        }
-        const headers ={
-            'Content-type' : 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('access_token')}` 
-        }
-        const response = await fetch (`http://localhost:5000/api/v1/cart/create-checkout-session`,{
-
-            method:'POST',
-            headers:headers,
-            body:JSON.stringify(body)
-        })
-        
-        const session = await response.json()
-        const result = stripe.redirectToCheckout({
-            sessionId:session.id
-        })
-
-
-
-
-        if (result.error) {
-            setError(result.error.message);
-        } else {
-            // Handle order placement after successful payment
-            const token = localStorage.getItem('access_token');
-            const decodedToken = jwtDecode(token);
-            const userId = decodedToken.id;
-
-            const paymentData = {
-                user: userId,
-                payment: {
-                    status: 'paid',
-                    paymentId: session.id,
-                    amount: grandTotal,
-                    createdAt: new Date(),
-                },
-                items: cartItem.map(item => ({
-                    product: item.product._id,
-                    quantity: item.quantity
-                }))
-            };
-
-            const orderResponse = await fetch('http://localhost:5000/api/v1/order', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify(paymentData)
-            });
-
-            if (!orderResponse.ok) {
-                setError('Failed to create order.');
-            } else {
-                        const clearCartResponse = await fetch(`http://localhost:5000/api/v1/cart/clear`, {
-                            method: 'DELETE',
-                            headers: {
-                                'Authorization': `Bearer ${token}`
-                            }
-                        });
-
-
-                if (clearCartResponse.ok) {
-                            
-                    setCartItem([]);
-                    } else {
-                          setError('Failed to clear cart after payment.');
-                    }
-               
-            }
-        }
-
-    }
-
     return (
-
 
 
 
@@ -251,7 +166,7 @@ export const CartPage = () => {
                                         />
                                         {item.product.name}
                                     </td>
-                                    <td>${item.product.price}</td>
+                                    <td>{item.product.price}</td>
                                     <td className="quantity-button">
                                         <button onClick={() => handleDecrease(item._id, item.quantity)}>-</button>
                                         {item.quantity}
@@ -259,8 +174,7 @@ export const CartPage = () => {
                                     </td>
                                     <td>{item.product.price * item.quantity}</td>
                                     <td>
-                                    <MdDelete onClick={() => deleteCartItem(item._id)} className="cart-delete-icon" />
-                                        
+                                        <button onClick={() => deleteCartItem(item._id)}>Delete</button>
                                     </td>
                                 </tr>
                             ))
@@ -274,7 +188,6 @@ export const CartPage = () => {
 
                 <div className="grand-total">
                     <h3>GRAND TOTAL : ${grandTotal.toFixed(2)} </h3>
-                    <button onClick={makePayment} className="pay-now-button">PAY NOW</button>
                 </div>
 
             </div>

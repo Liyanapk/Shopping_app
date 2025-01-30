@@ -14,8 +14,8 @@ export const TopSelection = () =>{
     
       return (
         <div className="selection-content">
-          <h1>Top Picks On Fashion</h1>
-          <Card  />
+          <h2>Top Picks On Fashion</h2>
+          <Card items={data} />
           
         </div>
       );
